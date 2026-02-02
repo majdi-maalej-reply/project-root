@@ -7,10 +7,6 @@ terraform {
       version = "~> 3.0"
     }
   }
-  
-  backend "azurerm" {
-    # Configure after creating storage account
-  }
 }
 
 provider "azurerm" {
