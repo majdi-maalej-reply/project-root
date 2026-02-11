@@ -22,6 +22,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   tags = {
     Environment = "Development"
     ManagedBy   = "Terraform"
+    yor_trace   = "d7dc40d2-6db8-4c30-ae0c-cc524e269cc3"
   }
 }
 
@@ -31,6 +32,9 @@ resource "azurerm_container_registry" "acr" {
   location            = data.azurerm_resource_group.main.location
   sku                 = "Basic"
   admin_enabled       = true
+  tags = {
+    yor_trace = "8bb860a6-901b-4e13-8e9e-b9fda081279d"
+  }
 }
 
 resource "azurerm_role_assignment" "acr_pull" {
